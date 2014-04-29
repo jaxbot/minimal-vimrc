@@ -1,0 +1,80 @@
+set encoding=utf-8
+
+" Look
+colorscheme slate
+set background=dark 
+set guifont=
+
+" Turn on line numbers
+set number			
+" Relative line numbers
+set rnu
+" Turn off menus, scrollbars, and other crutches
+set guioptions=
+
+" Make backspace delete characters
+set backspace=2
+
+" I like my leader being ','. It's easier to reach
+" It defaults to ]
+let mapleader = ","
+
+" Disable chimes
+set visualbell
+set t_vb = 
+set visualbell t_vb=
+au GuiEnter * set visualbell t_vb=
+
+" Disable backup and swap files
+set nobackup
+set noswapfile
+
+" use the OS clipboard
+set clipboard=unnamed
+
+" Improve Unix/Windows compatibility
+set viewoptions=folds,options,cursor,unix
+" Allow the cursor to pass the last character
+set virtualedit=onemore
+" Store more command history
+set history=100
+" Store a bunch of undo history
+set undolevels=400
+" Enable spell checking
+set spell
+" Allow buffer switching without saving
+set hidden
+
+" Show matching brackets/parenthesis
+set showmatch
+" Don't blink
+set matchtime=0
+" Find as you type search
+set incsearch
+" Highlight search terms
+set hlsearch
+" Windows can be 0 line high
+set winminheight=0
+" Case insensitive search
+set ignorecase
+" Case sensitive if we type an uppercase
+set smartcase
+
+" Here's an example mapping that makes CTRL-S save the file
+" CTRL-S
+nnoremap <silent> <C-S> :<C-u>Update<CR>
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
+
+" Pathogen is a plugin that makes loading other plugins easy
+" See: https://github.com/tpope/vim-pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" These must be run ~after~ pathogen loads
+syntax on
+filetype on 
+filetype plugin on
+filetype plugin indent on
+
